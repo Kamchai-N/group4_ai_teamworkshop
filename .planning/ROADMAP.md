@@ -65,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. API Layer | 0/1 | Not started | - |
+| 1. API Layer | 0/1 | Ready to execute | - |
 | 2. Login Page | 0/? | Not started | - |
 | 3. Swipe UI | 0/? | Not started | - |
