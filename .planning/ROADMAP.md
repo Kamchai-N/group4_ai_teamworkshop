@@ -27,8 +27,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. GET /api/dog returns a JSON response with a valid image URL (jpg/png) and extracted dogId
   2. GET /api/dog never returns a .mp4 URL — it retries until an image is found
   3. POST /api/swipe with a valid body writes a record to /data/swipes.json and returns success
-  4. GET /api/swipe returns the full list of swipe records from /data/swipes.json
-**Plans**: TBD
+  4. GET /api/history returns the full list of swipe records from /data/swipes.json
+**Plans**: 1 plan
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold Next.js + lib/storage.ts + all three API routes (GET /api/dog, POST /api/swipe, GET /api/history)
 
 ### Phase 2: Login Page
 **Goal**: Users can identify themselves with a username and the app prevents access to /swipe without one
@@ -63,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. API Layer | 0/? | Not started | - |
+| 1. API Layer | 0/1 | Not started | - |
 | 2. Login Page | 0/? | Not started | - |
 | 3. Swipe UI | 0/? | Not started | - |
