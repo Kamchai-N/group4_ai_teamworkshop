@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-05-08)
 
 **Core value:** A user can log in, swipe on dogs, and have their swipes saved — the loop must work end to end.
-**Current focus:** Phase 1 — API Layer
+**Current focus:** Phase 2 — Login Page
 
 ## Current Position
 
