@@ -12,7 +12,7 @@ Three vertical slices deliver the full core loop: API routes first (the data lay
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: API Layer** - Dog fetch and swipe storage endpoints are live and callable
+- [x] **Phase 1: API Layer** - Dog fetch and swipe storage endpoints are live and callable
 - [ ] **Phase 2: Login Page** - Users can enter a username and the app guards /swipe access
 - [ ] **Phase 3: Swipe UI** - Users can swipe on dogs with full like/dislike flow and persistence
 
@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. GET /api/history returns the full list of swipe records from /data/swipes.json
 **Plans**: 1 plan
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Next.js + lib/storage.ts + all three API routes (GET /api/dog, POST /api/swipe, GET /api/history)
+- [x] 01-01-PLAN.md — Scaffold Next.js + lib/storage.ts + all three API routes (GET /api/dog, POST /api/swipe, GET /api/history)
 
 ### Phase 2: Login Page
 **Goal**: Users can identify themselves with a username and the app prevents access to /swipe without one
@@ -65,6 +65,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. API Layer | 0/1 | Ready to execute | - |
+| 1. API Layer | 1/1 | Complete | 2026-05-07 |
 | 2. Login Page | 0/? | Not started | - |
 | 3. Swipe UI | 0/? | Not started | - |

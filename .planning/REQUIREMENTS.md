@@ -7,13 +7,13 @@
 
 ### Dog API
 
-- [ ] **DOG-01**: App fetches a random dog image URL from random.dog API (`GET /woof.json`) and extracts the dogId from the URL path
-- [ ] **DOG-02**: API route retries automatically if random.dog returns a non-image URL (.mp4)
+- [x] **DOG-01**: App fetches a random dog image URL from random.dog API (`GET /woof.json`) and extracts the dogId from the URL path
+- [x] **DOG-02**: API route retries automatically if random.dog returns a non-image URL (.mp4)
 
 ### Swipe Storage
 
-- [ ] **SWIPE-01**: POST /api/swipe saves a swipe record `{dogId, imageUrl, action, username, timestamp}` to `/data/swipes.json`
-- [ ] **SWIPE-02**: GET /api/swipe (or /api/history) reads all records from `/data/swipes.json`
+- [x] **SWIPE-01**: POST /api/swipe saves a swipe record `{dogId, imageUrl, action, username, timestamp}` to `/data/swipes.json`
+- [x] **SWIPE-02**: GET /api/swipe (or /api/history) reads all records from `/data/swipes.json`
 
 ### Login / Identity
 
@@ -57,10 +57,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DOG-01 | Phase 1 | Pending |
-| DOG-02 | Phase 1 | Pending |
-| SWIPE-01 | Phase 1 | Pending |
-| SWIPE-02 | Phase 1 | Pending |
+| DOG-01 | Phase 1 | Complete (01-01) |
+| DOG-02 | Phase 1 | Complete (01-01) |
+| SWIPE-01 | Phase 1 | Complete (01-01) |
+| SWIPE-02 | Phase 1 | Complete (01-01) |
 | LOGIN-01 | Phase 2 | Pending |
 | LOGIN-02 | Phase 2 | Pending |
 | LOGIN-03 | Phase 2 | Pending |
