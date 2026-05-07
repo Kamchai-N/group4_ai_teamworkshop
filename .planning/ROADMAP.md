@@ -2,7 +2,7 @@
 
 ## Overview
 
-Three vertical slices deliver the full core loop: API routes first (the data layer), then login identity (the gate), then the swipe UI (the experience). Each phase is independently runnable and testable. By Phase 3 the complete user journey — enter username, swipe dogs, save records — works end to end.
+Three vertical slices deliver the full core loop: API routes first (the data layer), then login identity (the gate), then the swipe UI (the experience). Each phase is independently runnable and testable.
 
 ## Phases
 
@@ -10,27 +10,20 @@ Three vertical slices deliver the full core loop: API routes first (the data lay
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-Decimal phases appear between their surrounding integers in numeric order.
+---
 
-- [x] **Phase 1: API Layer** - Dog fetch and swipe storage endpoints are live and callable
+## ✅ v0.1 — API Layer Checkpoint (SHIPPED 2026-05-08)
+
+- [x] **Phase 1: API Layer** — Dog fetch and swipe storage endpoints live and callable → [archive](.planning/milestones/v0.1-ROADMAP.md)
+
+---
+
+## 🚧 v1.0 — Full Core Loop (IN PROGRESS)
+
 - [ ] **Phase 2: Login Page** - Users can enter a username and the app guards /swipe access
 - [ ] **Phase 3: Swipe UI** - Users can swipe on dogs with full like/dislike flow and persistence
 
 ## Phase Details
-
-### Phase 1: API Layer
-**Goal**: The backend API endpoints exist and work — dog images can be fetched and swipes can be saved and read
-**Mode:** mvp
-**Depends on**: Nothing (first phase)
-**Requirements**: DOG-01, DOG-02, SWIPE-01, SWIPE-02
-**Success Criteria** (what must be TRUE):
-  1. GET /api/dog returns a JSON response with a valid image URL (jpg/png) and extracted dogId
-  2. GET /api/dog never returns a .mp4 URL — it retries until an image is found
-  3. POST /api/swipe with a valid body writes a record to /data/swipes.json and returns success
-  4. GET /api/history returns the full list of swipe records from /data/swipes.json
-**Plans**: 1 plan
-Plans:
-- [x] 01-01-PLAN.md — Scaffold Next.js + lib/storage.ts + all three API routes (GET /api/dog, POST /api/swipe, GET /api/history)
 
 ### Phase 2: Login Page
 **Goal**: Users can identify themselves with a username and the app prevents access to /swipe without one
@@ -60,11 +53,8 @@ Plans:
 
 ## Progress
 
-**Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3
-
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. API Layer | 1/1 | Complete | 2026-05-07 |
+| 1. API Layer | 1/1 | ✅ Complete | 2026-05-08 |
 | 2. Login Page | 0/? | Not started | - |
 | 3. Swipe UI | 0/? | Not started | - |

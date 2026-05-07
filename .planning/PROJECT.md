@@ -8,11 +8,17 @@ A Tinder-like swipe app for dogs, built as a workshop exercise for learning AI-a
 
 A user can log in, swipe on dogs, and have their swipes saved — the loop must work end to end.
 
+## Current State
+
+**v0.1 shipped 2026-05-08** — API layer complete. Backend routes live and tested (15/15 tests pass). Phases 2-3 (Login + Swipe UI) in progress for v1.0.
+
 ## Requirements
 
-### Validated
+### Validated (v0.1)
 
-(None yet — ship to validate)
+- App fetches random dog image from random.dog, skips .mp4 URLs ✓ (Phase 1)
+- Swipe records saved to /data/swipes.json with dogId, imageUrl, action, username, timestamp ✓ (Phase 1)
+- History readable from /data/swipes.json ✓ (Phase 1)
 
 ### Active
 
@@ -49,12 +55,12 @@ Example: "https://random.dog/d40de385-3626-46c8-94bf-b7097226174f.jpg" → "d40d
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| App Router (not Pages Router) | Workshop uses latest Next.js patterns | — Pending |
-| JSON file storage | No DB setup overhead for prototype | — Pending |
-| sessionStorage for username | Clears on browser close, simple to implement | — Pending |
-| Buttons for swipe (not drag) | Simpler to build, drag optional later | — Pending |
-| Skip .mp4 URLs silently | random.dog returns video sometimes; re-fetch is cleaner UX | — Pending |
-| data/swipes.json in .gitignore | Avoid team conflicts on shared swipe data | — Pending |
+| App Router (not Pages Router) | Workshop uses latest Next.js patterns | ✅ Validated (Phase 1) |
+| JSON file storage | No DB setup overhead for prototype | ✅ Validated (Phase 1) |
+| sessionStorage for username | Clears on browser close, simple to implement | ⏳ Pending (Phase 2) |
+| Buttons for swipe (not drag) | Simpler to build, drag optional later | ⏳ Pending (Phase 3) |
+| Skip .mp4 URLs silently | random.dog returns video sometimes; re-fetch is cleaner UX | ✅ Validated (Phase 1) |
+| data/swipes.json in .gitignore | Avoid team conflicts on shared swipe data | ✅ Validated (Phase 1) |
 
 ## Evolution
 
@@ -74,4 +80,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-08 after initialization*
+*Last updated: 2026-05-08 after v0.1 milestone*
