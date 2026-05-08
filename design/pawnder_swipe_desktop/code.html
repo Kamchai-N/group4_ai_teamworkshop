@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pawnder - Find Pets</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdbc9",
+                    "on-tertiary-fixed-variant": "#2c5000",
+                    "secondary-fixed": "#ede1d0",
+                    "on-primary-container": "#6a2d00",
+                    "secondary-fixed-dim": "#d1c5b5",
+                    "surface-tint": "#9b4500",
+                    "outline": "#897266",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#665d50",
+                    "on-background": "#1b1c1c",
+                    "on-primary-fixed-variant": "#763300",
+                    "surface-container": "#f0eded",
+                    "primary": "#9b4500",
+                    "tertiary-fixed-dim": "#9dd761",
+                    "surface-container-high": "#eae8e7",
+                    "surface-variant": "#e4e2e1",
+                    "secondary-container": "#ede1d0",
+                    "surface": "#fbf9f8",
+                    "surface-dim": "#dcd9d9",
+                    "on-surface": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#4d463a",
+                    "on-tertiary-fixed": "#0e2000",
+                    "background": "#fbf9f8",
+                    "surface-bright": "#fbf9f8",
+                    "surface-container-low": "#f6f3f2",
+                    "primary-container": "#ff8c42",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#ffb68d",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#f3f0f0",
+                    "inverse-surface": "#303030",
+                    "on-surface-variant": "#564338",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e4e2e1",
+                    "tertiary": "#3c6a00",
+                    "on-secondary-fixed": "#211b11",
+                    "tertiary-fixed": "#b8f47a",
+                    "on-tertiary-container": "#274700",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6c6356",
+                    "on-primary-fixed": "#331200",
+                    "primary-fixed-dim": "#ffb68d",
+                    "tertiary-container": "#83ba48",
+                    "outline-variant": "#ddc1b3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "3xl": "24px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "base": "8px",
+                    "container-padding": "20px",
+                    "sm": "12px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "xl": "64px",
+                    "card-gutter": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Quicksand"],
+                    "label-sm": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-lg": ["Quicksand"],
+                    "headline-md": ["Quicksand"],
+                    "label-lg": ["Quicksand"],
+                    "display": ["Quicksand"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "display": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle pet pattern background */
+        .bg-paw-pattern {
+            background-color: #fbf9f8;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.5 28c-3.5 0-6.5-2.5-7.5-6-.5-1.5-.5-3.5.5-5 1.5-2 4-2.5 6-1.5 2 1 3 3 3 5 0 .5.5 1 1 1s1-.5 1-1c0-2 1-4 3-5 2-1 4.5-.5 6 1.5 1 1.5 1 3.5.5 5-1 3.5-4 6-7.5 6zm-12.5-4c-2 0-4-1.5-4.5-3.5-.5-1.5 0-3 1.5-4 1.5-1 3.5-.5 4.5 1 1 1.5 1 3 .5 4.5-.5 1-2 2-2 2zm25 0c0 0-1.5-1-2-2-.5-1.5-.5-3 .5-4.5 1-1.5 3-2 4.5-1 1.5 1 2 2.5 1.5 4-.5 2-2.5 3.5-4.5 3.5zM29.5 34c4 0 7 2.5 8.5 6 .5 1.5.5 3.5-.5 5-1 2-3.5 2.5-5.5 1.5-1.5-1-2.5-2.5-2.5-4 0-.5-.5-1-1-1s-1 .5-1 1c0 1.5-1 3-2.5 4-2 1-4.5.5-5.5-1.5-1-1.5-1-3.5-.5-5 1.5-3.5 4.5-6 8.5-6z' fill='%23897266' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex h-screen overflow-hidden">
+<!-- Desktop SideNavBar -->
+<nav class="hidden md:flex flex-col p-md h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant z-40">
+<div class="flex items-center gap-sm mb-xl px-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="pets" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pets</span>
+</div>
+<div>
+<h1 class="font-display text-headline-lg text-primary">Pawnder</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Adoption Portal</p>
+</div>
+</div>
+<div class="flex flex-col space-y-base flex-1">
+<!-- Active Tab: Find Pets -->
+<a class="flex items-center gap-sm px-4 py-3 bg-secondary-container text-on-secondary-container font-bold rounded-xl active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined fill-icon" data-icon="search">search</span>
+<span class="font-body-md text-body-md">Find Pets</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-all rounded-xl active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="pets">pets</span>
+<span class="font-body-md text-body-md">My Matches</span>
+</a>
+<a class="flex items-center gap-sm px-4 py-3 text-on-surface-variant hover:bg-surface-container-high hover:translate-x-1 transition-all rounded-xl active:scale-[0.98] duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-body-md text-body-md">Messages</span>
+</a>
+</div>
+<div class="mt-auto pt-md border-t border-outline-variant">
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-full font-label-lg text-label-lg hover:bg-surface-tint transition-colors active:scale-95 shadow-sm hover:shadow-md">
+                Get Premium
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col h-full relative bg-paw-pattern">
+<!-- Mobile TopAppBar -->
+<header class="md:hidden flex justify-between items-center px-container-padding h-16 w-full max-w-7xl mx-auto bg-surface shadow-sm z-30 docked top-0">
+<h1 class="font-display text-headline-md text-primary">Pawnder</h1>
+<div class="flex items-center gap-sm">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Swipe Canvas -->
+<div class="flex-1 flex flex-col items-center justify-center p-container-padding overflow-hidden">
+<!-- Hero Profile Card -->
+<div class="w-full max-w-[420px] aspect-[3/4] max-h-[716px] rounded-[24px] bg-surface-container-lowest shadow-sm flex flex-col overflow-hidden relative transition-transform duration-300 hover:shadow-lg">
+<!-- Image Section -->
+<div class="flex-1 w-full relative bg-surface-variant">
+<img alt="A high-quality, professional photograph of a joyful Golden Retriever puppy looking directly at the camera with a playful expression. The lighting is soft and natural, creating a warm, inviting mood that aligns with a tactile-modern UI aesthetic. The background is a slightly blurred, bright outdoor park setting that provides a clean contrast against the warm orange and cream tones of the application's global color palette." class="w-full h-full object-cover absolute inset-0" data-alt="A high-quality, professional photograph of a joyful Golden Retriever puppy looking directly at the camera with a playful expression. The lighting is soft and natural, creating a warm, inviting mood that aligns with a tactile-modern UI aesthetic. The background is a slightly blurred, bright outdoor park setting that provides a clean contrast against the warm orange and cream tones of the application's global color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf9hik-VjbBwyzBPJFPq8WYZGeuoyDa9Y5cl9KPqBjD-5oOpGrQIeOeYRgyl3OK_ZkN3B993xMR2YgnSnYzQrQdDHMR6pZUwtvTOh8r3vQf1PN1qSRC5gDQ_GRYCZ3AfrqZPluNdPQxKpC0Fn3omnv9OeT6Kt6_sGRZTs95XC05u0brAB9oVOejSeV97CgxAfIs4zjPKvlCUJwoaI_MlrAfNK6qLmhV3J4Dwy-S_Fizt9OjmcDnFqoS9pQQAMO1kWJTcaBf-qjV3k"/>
+<!-- Gradient overlay for text readability if needed, though design asks for cream bottom -->
+</div>
+<!-- Info Section (Cream Bottom) -->
+<div class="p-md bg-surface-container-lowest flex flex-col justify-end">
+<div class="flex justify-between items-end mb-xs">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-baseline gap-xs">
+                            Barnaby <span class="font-body-lg text-body-lg text-on-surface-variant font-normal">2 yrs</span>
+</h2>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]" data-icon="male">male</span>
+</div>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant mb-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="pets">pets</span>
+<p class="font-body-md text-body-md">Golden Retriever Mix</p>
+</div>
+<div class="flex items-center gap-xs text-secondary">
+<span class="material-symbols-outlined text-[18px]" data-icon="location_on">location_on</span>
+<p class="font-body-md text-body-md">2 miles away • Sunnyvale Shelter</p>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex justify-center items-center gap-md mt-lg z-10">
+<!-- Dislike Button -->
+<button class="w-16 h-16 rounded-full bg-surface-container-lowest border-2 border-outline-variant shadow-sm flex items-center justify-center text-error hover:bg-error-container hover:border-error-container hover:shadow-md transition-all active:scale-90 duration-150 group">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform" data-icon="close">close</span>
+</button>
+<!-- Super Like Button -->
+<button class="w-14 h-14 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-primary hover:bg-secondary-container hover:shadow-md transition-all active:scale-90 duration-150 group mt-4">
+<span class="material-symbols-outlined text-[28px] group-hover:scale-110 transition-transform fill-icon" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<!-- Like Button -->
+<button class="w-20 h-20 rounded-full bg-primary shadow-sm flex items-center justify-center text-on-primary hover:bg-surface-tint hover:shadow-md transition-all active:scale-90 duration-150 group">
+<span class="material-symbols-outlined text-[40px] group-hover:scale-110 transition-transform fill-icon" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+</div>
+<!-- Mobile BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 md:hidden bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.04)] rounded-t-xl">
+<!-- Active Tab: Swipe -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined fill-icon" data-icon="pets" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pets</span>
+<span class="font-label-lg text-label-lg mt-xs">Swipe</span>
+</button>
+<!-- Inactive Tabs -->
+<button class="flex flex-col items-center justify-center text-secondary p-2 hover:bg-secondary-container rounded-full active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-lg text-label-lg mt-xs">Matches</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary p-2 hover:bg-secondary-container rounded-full active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-lg text-label-lg mt-xs">Profile</span>
+</button>
+</nav>
+</main>
+</body></html>

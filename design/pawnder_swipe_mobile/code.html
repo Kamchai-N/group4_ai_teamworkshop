@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pawnder - Swipe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdbc9",
+                        "on-tertiary-fixed-variant": "#2c5000",
+                        "secondary-fixed": "#ede1d0",
+                        "on-primary-container": "#6a2d00",
+                        "secondary-fixed-dim": "#d1c5b5",
+                        "surface-tint": "#9b4500",
+                        "outline": "#897266",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#665d50",
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed-variant": "#763300",
+                        "surface-container": "#f0eded",
+                        "primary": "#9b4500",
+                        "tertiary-fixed-dim": "#9dd761",
+                        "surface-container-high": "#eae8e7",
+                        "surface-variant": "#e4e2e1",
+                        "secondary-container": "#ede1d0",
+                        "surface": "#fbf9f8",
+                        "surface-dim": "#dcd9d9",
+                        "on-surface": "#1b1c1c",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#4d463a",
+                        "on-tertiary-fixed": "#0e2000",
+                        "background": "#fbf9f8",
+                        "surface-bright": "#fbf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "primary-container": "#ff8c42",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#ffb68d",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f3f0f0",
+                        "inverse-surface": "#303030",
+                        "on-surface-variant": "#564338",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e4e2e1",
+                        "tertiary": "#3c6a00",
+                        "on-secondary-fixed": "#211b11",
+                        "tertiary-fixed": "#b8f47a",
+                        "on-tertiary-container": "#274700",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#6c6356",
+                        "on-primary-fixed": "#331200",
+                        "primary-fixed-dim": "#ffb68d",
+                        "tertiary-container": "#83ba48",
+                        "outline-variant": "#ddc1b3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "base": "8px",
+                        "container-padding": "20px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "xl": "64px",
+                        "card-gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Quicksand"],
+                        "label-sm": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "label-lg": ["Quicksand"],
+                        "display": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-lg": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "display": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface h-screen flex flex-col overflow-hidden antialiased">
+<!-- Minimal Header -->
+<header class="w-full pt-sm pb-xs px-container-padding flex justify-center items-center flex-shrink-0 z-10">
+<h1 class="font-display text-headline-lg text-primary tracking-tight">Pawnder</h1>
+</header>
+<!-- Main Swipe Area -->
+<main class="flex-1 w-full max-w-md mx-auto relative px-container-padding pb-[90px] flex flex-col justify-end z-0">
+<!-- Interactive Card -->
+<div class="absolute top-0 left-container-padding right-container-padding bottom-[120px] bg-surface-container-lowest rounded-3xl shadow-[0_4px_24px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col border border-surface-container-high transition-transform duration-300">
+<!-- Card Image Area -->
+<div class="flex-1 relative w-full overflow-hidden bg-surface-variant">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A vibrant, high-quality photograph of a happy Golden Retriever mix dog outdoors. The dog is looking directly at the camera with an open, panting smile, conveying a sense of energetic optimism. The background is a soft, blurred park setting with lush green grass and bright, warm sunlight filtering through trees. The overall image has a bright, airy, and approachable aesthetic that perfectly complements the energetic and heartwarming brand identity, utilizing warm natural tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJPpbO_2ObjOY0bXjA-guyHNwpJFi7MD1zOVXIve5G33ICIz-26ayi0Pok971VPcVakLx_OY8AmRe8FZCOTzJkbI0NWcfUxwzeWVIr34xCyOdSEWBOIv6ZnlM1wur726l6fZaDomyQjlv5DxVDkYpRi5yW72zdBHL2mmlN0rtDxbXELktosX70sXNfk7KSHSKyZkEhZvr3OUuBfd9JW3ND_jwHrQLCt0KYyfd02YpFI-IeglTrT02b4NDPFudujrReJDWf5CGhIA0"/>
+<!-- Tag Overlay -->
+<div class="absolute top-sm left-sm bg-surface/90 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-xs shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]" data-weight="fill">local_fire_department</span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase tracking-wider">New Match</span>
+</div>
+<div class="absolute top-sm right-sm bg-surface/90 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-xs shadow-sm">
+<span class="material-symbols-outlined text-primary text-[16px]">location_on</span>
+<span class="font-label-sm text-label-sm text-on-surface">2 mi</span>
+</div>
+<!-- Gradient Scrim for text readability -->
+<div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
+<!-- Overlay Text Details -->
+<div class="absolute bottom-0 w-full p-md pb-sm text-white">
+<div class="flex items-end justify-between mb-xs">
+<h2 class="font-headline-lg text-headline-lg m-0 leading-none drop-shadow-md">Bella, <span class="font-headline-md text-headline-md font-normal opacity-90">3</span></h2>
+<div class="bg-surface/20 backdrop-blur-md p-xs rounded-full">
+<span class="material-symbols-outlined text-white text-[20px]" data-weight="fill">female</span>
+</div>
+</div>
+<p class="font-body-md text-body-md opacity-90 drop-shadow-sm m-0">Golden Retriever Mix</p>
+</div>
+</div>
+<!-- Card Info Area -->
+<div class="bg-surface-container-lowest p-md flex-shrink-0 h-[100px]">
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 m-0 leading-relaxed">
+                    Loves long walks on the beach, chasing tennis balls, and endless belly rubs. Looking for an active human!
+                </p>
+</div>
+</div>
+<!-- Floating Action Buttons Container -->
+<div class="absolute bottom-[20px] left-0 w-full px-container-padding flex justify-center items-center gap-md z-20">
+<!-- Pass Button -->
+<button class="w-16 h-16 rounded-full bg-surface shadow-[0_4px_16px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface-variant hover:bg-surface-variant active:scale-95 transition-all duration-200 border-2 border-outline-variant">
+<span class="material-symbols-outlined text-[32px]">close</span>
+</button>
+<!-- Super Like Button -->
+<button class="w-12 h-12 rounded-full bg-surface shadow-[0_4px_16px_rgba(0,0,0,0.08)] flex items-center justify-center text-tertiary-container hover:bg-surface-variant active:scale-95 transition-all duration-200 border border-outline-variant mt-sm">
+<span class="material-symbols-outlined text-[24px]" data-weight="fill">star</span>
+</button>
+<!-- Like Button -->
+<button class="w-[72px] h-[72px] rounded-full bg-primary shadow-[0_6px_20px_rgba(155,69,0,0.25)] flex items-center justify-center text-on-primary active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined text-[36px]" data-weight="fill">favorite</span>
+</button>
+</div>
+</main>
+<!-- Shared Component: BottomNavBar -->
+<nav class="bg-surface-container-lowest shadow-[0_-4px_12px_rgba(0,0,0,0.04)] fixed bottom-0 w-full rounded-t-xl z-50 flex justify-around items-center px-4 py-3 md:hidden">
+<!-- Tab 1: Swipe (Active) -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-6 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-weight="fill">pets</span>
+<span class="font-label-lg text-label-lg mt-xs">Swipe</span>
+</button>
+<!-- Tab 2: Matches (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary p-2 hover:bg-secondary-container rounded-full active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-lg text-label-lg mt-xs">Matches</span>
+</button>
+<!-- Tab 3: Profile (Inactive) -->
+<button class="flex flex-col items-center justify-center text-secondary p-2 hover:bg-secondary-container rounded-full active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-lg text-label-lg mt-xs">Profile</span>
+</button>
+</nav>
+</body></html>
