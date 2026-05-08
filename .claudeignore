@@ -1,11 +1,14 @@
 # Dependencies & build output
+
 node_modules/
 .next/
 
 # Lockfile
+
 package-lock.json
 
 # Default Next.js placeholder assets (not project assets)
+
 public/file.svg
 public/globe.svg
 public/next.svg
@@ -13,10 +16,13 @@ public/vercel.svg
 public/window.svg
 
 # Default Next.js README
+
 README.md
 
 # Binary design screenshots
-design/**/screen.png
+
+design/\*\*/screen.png
 
 # Archived milestone docs
+
 .planning/milestones/
