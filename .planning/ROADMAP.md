@@ -35,7 +35,11 @@ Three vertical slices deliver the full core loop: API routes first (the data lay
   2. After submitting, the username is stored in sessionStorage under the key "username"
   3. User is redirected to /swipe after successful login
   4. Visiting /swipe without a username in sessionStorage redirects back to /login
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Replace globals.css (@theme design tokens) and layout.tsx (Quicksand font + Pawnder metadata)
+- [ ] 02-02-PLAN.md — Build login page, swipe auth-guard stub, root redirect + UAT checkpoint
 
 ### Phase 3: Swipe UI
 **Goal**: Users can see dog images and swipe like or dislike — each action is saved and the next dog loads
@@ -56,5 +60,5 @@ Three vertical slices deliver the full core loop: API routes first (the data lay
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. API Layer | 1/1 | ✅ Complete | 2026-05-08 |
-| 2. Login Page | 0/? | Not started | - |
+| 2. Login Page | 0/2 | Not started | - |
 | 3. Swipe UI | 0/? | Not started | - |
